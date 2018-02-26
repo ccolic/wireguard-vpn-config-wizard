@@ -1,0 +1,29 @@
+# Vagrant test environment
+# This can be used to test the VPN connection wizard
+# Site-to-Site or Client-to-Client test setup
+
+Vagrant.configure("2") do |config|
+	config.vm.define "wg01" do |wg01|
+    wg01.vm.provider "virtualbox"
+    wg01.vm.box = "ubuntu/xenial64"
+    wg01.vm.box_check_update = false
+    wg01.vm.hostname = "wg01"
+  	wg01.vm.synced_folder ".", "/vagrant", disabled: true
+    wg01.vm.synced_folder "../../setup_files/", "/home/ubuntu/wg"
+    wg01.vm.network "private_network", ip: "192.168.254.101"
+    wg01.vm.network "private_network", ip: "172.16.10.10"
+    wg01.vm.provision :shell, path: "enable_ipv4_routing.sh"
+  end
+
+	config.vm.define "wg02" do |wg02|
+    wg02.vm.provider "virtualbox"
+    wg02.vm.box = "ubuntu/xenial64"
+    wg02.vm.box_check_update = false
+    wg02.vm.hostname = "wg02"
+  	wg02.vm.synced_folder ".", "/vagrant", disabled: true
+    wg02.vm.synced_folder "../../setup_files/", "/home/ubuntu/wg"
+    wg02.vm.network "private_network", ip: "192.168.254.102"
+    wg02.vm.network "private_network", ip: "172.16.20.10"
+    wg02.vm.provision :shell, path: "enable_ipv4_routing.sh"
+  end
+end

@@ -1,0 +1,12 @@
+# Site-to-Site test setup
+
+This will start two VMs that you can use to test Site-to-Site connections
+
+
+# Network setup
+
+The network between the two machines is 192.168.254.0/24, over this network we can establish a VPN connection
+Each machine has a local network behind it, this can be used for testing of the routing
+IP routing is enabled on both hosts
+
+ 172.16.10.10 --- wg0 --- 192.168.254.101 -------------------192.168.254.102 --- wg02 --- 172.16.20.10

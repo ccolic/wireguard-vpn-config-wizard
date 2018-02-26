@@ -1,0 +1,13 @@
+# Explanation of the vagrant development setup
+
+- Install virtualbox (https://www.virtualbox.org/) and vagrant (https://www.vagrantup.com/)
+- Setup virtualbox as your default vagrant provider (https://www.vagrantup.com/docs/providers/default.html)
+- Change to the util/dev directory and choose one of the test setups
+    Each setup will start some VMs that you can use to test the generated configurations
+    You can run the install and setup scripts and troubleshoot the VPN connection
+- You can check the VM status with "vagrant status"
+- Access the VMs with "vagrant ssh VM_NAME"
+
+# Network setup
+
+Each folder has a README with its network configuration details

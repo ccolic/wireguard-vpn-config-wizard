@@ -1,0 +1,15 @@
+# Site-to-Site test setup
+
+This will start 4 VMs that you can use to test Client-to-Site connections
+
+
+# Network setup
+
+There is one "site" machine and three clients
+
+
+                                                - 192.168.254.101 --- client-1
+172.16.10.10 --- site --- 192.168.254.100   ----- 192.168.254.102 --- client-2
+                                                - 192.168.254.103 --- client-3
+
+the site has a 172.16.10.0/24 network "behind" it, that the clients should be able to access

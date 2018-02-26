@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane fx:id="main_anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="800.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wgWizard.controller.MainController">
+    <children>
+        <VBox alignment="TOP_CENTER" minHeight="400.0" minWidth="800.0" prefHeight="400.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <MenuBar nodeOrientation="LEFT_TO_RIGHT" VBox.vgrow="ALWAYS">
+                    <menus>
+                        <Menu mnemonicParsing="false" text="File">
+                            <items>
+                                <MenuItem fx:id="menu_close" mnemonicParsing="false" text="Close" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Info">
+                            <items>
+                                <MenuItem fx:id="menu_about" mnemonicParsing="false" text="About" />
+                            </items>
+                        </Menu>
+                  <Menu mnemonicParsing="false" text="Guide">
+                     <items>
+                        <MenuItem fx:id="menu_guide" mnemonicParsing="false" text="User Guide" />
+                     </items>
+                  </Menu>
+                    </menus>
+                </MenuBar>
+            <GridPane alignment="CENTER" VBox.vgrow="ALWAYS">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                      <Label text="Welcome to WireGuard VPN Wizard" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                        <Button fx:id="main_btn_s2s" mnemonicParsing="false" text="Site-To-Site" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                        <Button fx:id="main_btn_c2s" mnemonicParsing="false" text="Client-To-Site" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                        <Button fx:id="main_btn_c2c" mnemonicParsing="false" text="Client-To-Client" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+               </children>
+            </GridPane>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

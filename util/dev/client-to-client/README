@@ -1,0 +1,10 @@
+# Client-to-Client test setup
+
+This will start two VMs that you can use to test Client-to-Client connections
+
+
+# Network setup
+
+The network between the two machines is 192.168.254.0/24, over this network we can establish a VPN connection
+
+client-1 --- 192.168.254.101 -------------------192.168.254.102 --- client-2

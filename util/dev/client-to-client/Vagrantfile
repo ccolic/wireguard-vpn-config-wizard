@@ -1,0 +1,25 @@
+# Vagrant test environment
+# This can be used to test the VPN connection wizard
+# Client-to-Client test setup
+
+Vagrant.configure("2") do |config|
+	config.vm.define "client-1" do |client-1|
+    wg01.vm.provider "virtualbox"
+    wg01.vm.box = "ubuntu/xenial64"
+    wg01.vm.box_check_update = false
+    wg01.vm.hostname = "client-1"
+  	wg01.vm.synced_folder ".", "/vagrant", disabled: true
+    wg01.vm.synced_folder "../../setup_files/", "/home/ubuntu/wg"
+    wg01.vm.network "private_network", ip: "192.168.254.101"
+  end
+
+	config.vm.define "client-2" do |client-2|
+    wg02.vm.provider "virtualbox"
+    wg02.vm.box = "ubuntu/xenial64"
+    wg02.vm.box_check_update = false
+    wg02.vm.hostname = "client-2"
+  	wg02.vm.synced_folder ".", "/vagrant", disabled: true
+    wg02.vm.synced_folder "../../setup_files/", "/home/ubuntu/wg"
+    wg02.vm.network "private_network", ip: "192.168.254.102"
+  end
+end
